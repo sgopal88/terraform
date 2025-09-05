@@ -40,6 +40,10 @@ jobs:
       - name: List env folder
         run: ls -R env
 
+      - name: Debug environment inputs
+        run: cat env/${{ github.event.inputs.environment }}.tfvars
+
+
       - name: Terraform Plan
         run: terraform plan -var-file="env/${{ github.event.inputs.environment }}.tfvars"
 
