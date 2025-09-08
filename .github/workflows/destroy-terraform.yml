@@ -8,6 +8,10 @@ on:
         required: true
         default: "dev"
 
+permissions:
+  id-token: write   # 👈 needed for OIDC
+  contents: read
+
 jobs:
   terraform-destroy:
     runs-on: ubuntu-latest
